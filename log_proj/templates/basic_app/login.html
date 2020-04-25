@@ -1,0 +1,28 @@
+{% extends 'basic_app/base.html' %}
+{% load static %}
+  {% block body_block %}
+  <link rel="stylesheet" href="{%static 'css/login_style.css'%}">
+    <div class="jumbotron">
+      <h2>Login</h2>
+      <br><br>
+      <h5>Please enter valid Login Credentials </h5>
+
+      <br>
+      <form action="{% url 'user_login' %}" method="post">
+        {% csrf_token %}
+
+          <label for="username">Username</label>
+          <input type="text" name="username" placeholder="Enter username"><br><br>
+          <label for="password">Password</label>
+          <input type="password" name="password" placeholder="Enter password"><br><br>
+          <input type="submit" class="btn btn-primary" name="" value="Login">
+
+
+
+      </form>
+      <br><br><br>
+
+
+    </div>
+
+  {% endblock %}

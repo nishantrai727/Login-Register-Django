@@ -1,0 +1,25 @@
+{% extends "basic_app/base.html" %}
+{% load static %}
+
+
+
+  {% block body_block %}
+  <link rel="stylesheet" href="{% static 'css/index_style.css' %}">
+    <div class="jumbotron">
+      <h2>Hello Everyone!!</h2>
+      <br><br>
+      <h4>This Register-Login sytem is created with Django Frramework.</h4>
+      <br><br>
+      <h6>This project is basically implementation of developing User Login-Register system by involving the Built-in USER MODEL.</h6>
+      <h6>This System with certain updation and manipulations can be used in different WEBSITE.</h6>
+      <h6>This System is using Strong Password Hashers,thus enough compatible to use while hosting WEBSITE.</h6>
+      <br><br>
+      <p>Created with Love by Nishant.</p>
+      <p>Visit his Github Profile for codes.</p>
+      {% if user.is_authenticated %}
+      <script type="text/javascript">
+        alert("Logged-in Successfully!!!")
+      </script>
+      {% endif %}
+    </div>
+  {% endblock %}
